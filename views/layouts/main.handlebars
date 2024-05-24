@@ -31,6 +31,17 @@
             </nav>
         </header>
         <div class="background" id="lottie-background"></div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                lottie.loadAnimation({
+                    container: document.getElementById('lottie-background'),
+                    renderer: 'svg',
+                    loop: true,
+                    autoplay: true,
+                    path: '/images/Animation - 1716416642848.json'
+                });
+            });
+        </script>
 
         <main class="container-news">
             <!-- Render the sub layout -->
