@@ -1,0 +1,62 @@
+<div class="container-login">
+
+    <div class="login-form">
+
+        <h2>Login</h2>
+
+        <form class="form login-form">
+            <div class="form-group">
+                <label for="email-login">email:</label>
+                <input class="form-input" type="text" id="email-login" />
+            </div>
+            <div class="form-group">
+                <label for="password-login">password:</label>
+                <input class="form-input" type="password" id="password-login" />
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">login</button>
+            </div>
+        </form>
+
+
+
+
+    </div>
+    <div class="background" id="lottie-background-giraffe"></div>
+    <div class="login-form">
+        <h2>Signup</h2>
+
+        <form class="form signup-form">
+            <div class="form-group">
+                <label for="name-signup">name:</label>
+                <input class="form-input" type="text" id="name-signup" />
+            </div>
+            <div class="form-group">
+                <label for="email-signup">email:</label>
+                <input class="form-input" type="text" id="email-signup" />
+            </div>
+            <div class="form-group">
+                <label for="password-signup">password:</label>
+                <input class="form-input" type="password" id="password-signup" />
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">signup</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        lottie.loadAnimation({
+            container: document.getElementById('lottie-background-giraffe'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            path: '/images/Animation - 1716434043853.json'
+        });
+    });
+</script>
+<script src="./js/login.js"></script>
