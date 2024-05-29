@@ -1,7 +1,3 @@
 DROP DATABASE IF EXISTS zookeepr_db;
 CREATE DATABASE zookeepr_db;
-CREATE TABLE IF NOT EXISTS zooInventory (
-  Id INT PRIMARY KEY,
-  Animal VARCHAR ('20')
-  Quantity INT NOT NULL
-)
+
