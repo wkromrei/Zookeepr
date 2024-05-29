@@ -1,11 +1,11 @@
 const router = require("express").Router();
-const { zooUser } = require("../../models");
+const { User } = require("../../models");
 const passport = require('../../utils/passport');
 
 router.post("/", async (req, res) => {
   try {
     console.log('<<<<<<<loading route>>>>>>>>>');
-    const userData = await zooUser.create(req.body);
+    const userData = await User.create(req.body);
 
     req.session.save(() => {
       req.session.user_id = userData.id;
@@ -19,8 +19,8 @@ router.post("/", async (req, res) => {
 });
 
 router.post("/login", passport.authenticate("local", {
-  successRedirect:"/",
-  failureRedirect:"/login"
+  successRedirect: "/",
+  failureRedirect: "/login"
 }));
 
 // router.post("/login", (req, res) => {
@@ -33,35 +33,35 @@ router.post("/login", passport.authenticate("local", {
 //   })(req, res)
 // });
 // router.post("/login", passport.authenticate("local"), async (req, res) => {
-  
-  // try {
-  //   const userData = await User.findOne({ where: { email: req.body.email } });
 
-  //   if (!userData) {
-  //     res
-  //       .status(400)
-  //       .json({ message: "Incorrect email or password, please try again" });
-  //     return;
-  //   }
+// try {
+//   const userData = await User.findOne({ where: { email: req.body.email } });
 
-  //   const validPassword = await userData.checkPassword(req.body.password);
+//   if (!userData) {
+//     res
+//       .status(400)
+//       .json({ message: "Incorrect email or password, please try again" });
+//     return;
+//   }
 
-  //   if (!validPassword) {
-  //     res
-  //       .status(400)
-  //       .json({ message: "Incorrect email or password, please try again" });
-  //     return;
-  //   }
+//   const validPassword = await userData.checkPassword(req.body.password);
 
-  //   req.session.save(() => {
-  //     req.session.user_id = userData.id;
-  //     req.session.logged_in = true;
+//   if (!validPassword) {
+//     res
+//       .status(400)
+//       .json({ message: "Incorrect email or password, please try again" });
+//     return;
+//   }
 
-  //     res.json({ user: userData, message: "You are now logged in!" });
-  //   });
-  // } catch (err) {
-  //   res.status(400).json(err);
-  // }
+//   req.session.save(() => {
+//     req.session.user_id = userData.id;
+//     req.session.logged_in = true;
+
+//     res.json({ user: userData, message: "You are now logged in!" });
+//   });
+// } catch (err) {
+//   res.status(400).json(err);
+// }
 //   res.json(req.user)
 // });
 
