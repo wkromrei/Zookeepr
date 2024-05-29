@@ -1,10 +1,10 @@
 const router = require("express").Router();
 const { zooUser } = require("../../models");
-const passport = require('../../utils/passport');
+const passport = require("../../utils/passport");
 
 router.post("/", async (req, res) => {
   try {
-    console.log('<<<<<<<loading route>>>>>>>>>');
+    console.log("<<<<<<<loading route>>>>>>>>>");
     const userData = await zooUser.create(req.body);
 
     req.session.save(() => {
@@ -18,52 +18,13 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.post("/login", passport.authenticate("local", {
-  successRedirect:"/",
-  failureRedirect:"/login"
-}));
-
-// router.post("/login", (req, res) => {
-//   passport.authenticate("local",
-//       (err, user, options) => {
-//         console.log({err});
-//         console.log({user});
-//         console.log({options});
-//         res.redirect("/");
-//   })(req, res)
-// });
-// router.post("/login", passport.authenticate("local"), async (req, res) => {
-  
-  // try {
-  //   const userData = await User.findOne({ where: { email: req.body.email } });
-
-  //   if (!userData) {
-  //     res
-  //       .status(400)
-  //       .json({ message: "Incorrect email or password, please try again" });
-  //     return;
-  //   }
-
-  //   const validPassword = await userData.checkPassword(req.body.password);
-
-  //   if (!validPassword) {
-  //     res
-  //       .status(400)
-  //       .json({ message: "Incorrect email or password, please try again" });
-  //     return;
-  //   }
-
-  //   req.session.save(() => {
-  //     req.session.user_id = userData.id;
-  //     req.session.logged_in = true;
-
-  //     res.json({ user: userData, message: "You are now logged in!" });
-  //   });
-  // } catch (err) {
-  //   res.status(400).json(err);
-  // }
-//   res.json(req.user)
-// });
+router.post(
+  "/login",
+  passport.authenticate("local", {
+    successRedirect: "/",
+    failureRedirect: "/login",
+  })
+);
 
 router.post("/logout", (req, res) => {
   if (req.session.logged_in) {
