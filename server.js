@@ -11,12 +11,12 @@ const Sequelize = require("sequelize");
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-(async()=>{
-  const results = await sequelize.query('SELECT * FROM zooUser', {
+(async () => {
+  const results = await sequelize.query('SELECT * FROM User', {
     replacements: { age: 25 }, // Bind parameters
     type: Sequelize.QueryTypes.SELECT,
   });
-  
+
   console.log('Raw Query Results:', results);
 })();
 
