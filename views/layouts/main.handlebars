@@ -1,65 +1,62 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zookeepr</title>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
-    <link rel="stylesheet" href="/css/jass.css">
-    <link rel="stylesheet" href="/css/style.css">
-</head>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"
+    ></script>
+    <link rel="stylesheet" href="/css/jass.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
 
-<body>
-    {{!-- <div class="flex-column justify-space-around"> --}}
-        <header id="header" class="header-container">
-            <h1>
-                {{!-- <span role="img" aria-label="money"></span> --}}
-                <a href="/">Zookeepr</a>
-                <img src="/images/logo.png" alt="logo" />
-            </h1>
+  <body>
+    {{! <div class="flex-column justify-space-around"> }}
+    <header id="header" class="header-container">
+      <h1>
+        {{! <span role="img" aria-label="money"></span> }}
+        <a href="/">Zookeepr</a>
+        <img src="/images/logo.png" alt="logo" />
+      </h1>
 
-            <nav>
-                <!-- Conditionally render login or logout links -->
-                {{#if logged_in}}
-                <a href="/profile">profile</a> |
-                <button class="no-button" id="logout">logout</button>
-                {{else}}
-                <a href="/login">Login</a>
-                {{/if}}
-            </nav>
-        </header>
-        <div class="background" id="lottie-background"></div>
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                lottie.loadAnimation({
-                    container: document.getElementById('lottie-background'),
-                    renderer: 'svg',
-                    loop: true,
-                    autoplay: true,
-                    path: '/images/Animation - 1716416642848.json'
-                });
-            });
-        </script>
+      <nav>
+        <!-- Conditionally render login or logout links -->
+        {{#if logged_in}}
+          <a href="/profile">profile</a>
+          |
+          <button class="no-button" id="logout">logout</button>
+        {{else}}
+          <a href="/login">Login</a>
+        {{/if}}
+      </nav>
+    </header>
+    <div class="background" id="lottie-background"></div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+      lottie.loadAnimation({ container:
+      document.getElementById('lottie-background'), renderer: 'svg', loop: true,
+      autoplay: true, path: '/images/Animation - 1716416642848.json' }); });
+    </script>
 
-        <main class="container-news">
-            <!-- Render the sub layout -->
-            {{{ body }}}
-            {{!--
-        </main> --}}
-        </main>
-        <footer>
+    <main class="container-news">
+      <!-- Render the sub layout -->
+      {{{body}}}
+      {{!
+        </main> }}
+    </main>
+    <footer>
 
-        </footer>
-        {{!--
-    </div> --}}
+    </footer>
+    {{!
+    </div> }}
 
     <!-- Render script for logged in users only -->
     {{#if logged_in}}
-    <script src="/js/logout.js"></script>
+      <script src="/js/logout.js"></script>
     {{/if}}
 
-</body>
+  </body>
 
 </html>

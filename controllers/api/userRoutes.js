@@ -1,18 +1,16 @@
 const router = require("express").Router();
 const { User } = require("../../models");
-const passport = require("../../utils/passport");
+const passport = require("passport");
 
 router.post("/", async (req, res) => {
   try {
     console.log("<<<<<<<loading route>>>>>>>>>");
     const userData = await User.create(req.body);
-
-    const user = userData.get({ plain: true });
-    req.session.save(() => {
-      req.session.user_id = userData.id;
-      req.session.logged_in = true;
-
-      res.status(200).json(user);
+    req.login(userData, (err) => {
+      if (err) {
+        return res.status(500).json(err);
+      }
+      res.status(200).json(userData);
     });
   } catch (err) {
     res.status(400).json(err);
@@ -22,19 +20,18 @@ router.post("/", async (req, res) => {
 router.post(
   "/login",
   passport.authenticate("local", {
-    successRedirect: "/",
+    successRedirect: "/profile",
     failureRedirect: "/login",
   })
 );
 
 router.post("/logout", (req, res) => {
-  if (req.session.logged_in) {
-    req.session.destroy(() => {
-      res.status(204).end();
-    });
-  } else {
-    res.status(404).end();
-  }
+  req.logout((err) => {
+    if (err) {
+      return res.status(500).json(err);
+    }
+    res.status(204).end();
+  });
 });
 
 module.exports = router;
