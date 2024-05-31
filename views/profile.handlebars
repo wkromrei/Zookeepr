@@ -1,29 +1,72 @@
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Profile</title>
-</head>
+  </head>
 
-<body>
-    <h1>Welcome to Your Profile</h1>
-    <p>Hello, {{user.name}}!</p>
+  <body>
+    <div class="main-container">
+      <h1>Welcome, {{name}}!</h1>
 
-    <!-- Button to Add an Animal -->
-    <form action="/animals/add" method="GET">
-        <button type="submit">Add Animal</button>
-    </form>
+      <div class="buttons-section">
+        <div class="add-container">
+          <!-- Button to Add an Animal -->
+          <form action="/animals/add" method="GET">
+            <button class="edit-buttons" type="submit">Add Animal</button>
+          </form>
 
-    <!-- Button to Delete an Animal -->
-    <form action="/animals/delete" method="GET">
-        <button type="submit">Delete Animal</button>
-    </form>
+          <!-- Button to Delete an Animal -->
+          <form action="/animals/delete" method="GET">
+            <button class="edit-buttons" type="submit">Delete Animal</button>
+          </form>
+        </div>
 
-    <!-- Logout Button -->
-    <form action="/users/logout" method="POST">
-        <button type="submit">Logout</button>
-    </form>
-</body>
+        <!-- Logout Button -->
+        <form action="/users/logout" method="POST">
+          <button class="show-all-button" type="submit">Show All Animals</button>
+        </form>
+      </div>
+
+      <h2 style="margin-bottom: 40px;">Staff Bulletin Board</h2>
+      <section class="blog-section">
+
+        <div class="blog-post">
+          <h3>How to Effectively Train An Elephant</h3>
+          <p>Ethan Cho</p>
+          <p class="summary">Dear Diary... Today is my first day working at
+            Zookepr. My position is to train elephants, however I only have
+            experience with parakeets...</p>
+        </div>
+
+        <div class="blog-post">
+          <h3>How To Sell Overpriced Water To Tourist</h3>
+          <p>Matteo Ramazzini</p>
+          <p class="summary">At first, I felt guilty, but then I realized that
+            employees get 10% commission on all waterbottles sold. Naturally, I
+            got rid of my moral compass, and have racked in over $37...</p>
+        </div>
+
+        <div class="blog-post">
+          <h3>Why Crying In The Rainforest Worked For Me</h3>
+          <p>Eli Montoya</p>
+          <p class="summary">I tried crying in my car, but passerbys would laugh
+            at me. I discovered that the rain from the rainforest exibit made as
+            a great cover for my tears!</p>
+        </div>
+
+        <div class="blog-post">
+          <h3>10 Reasons Not To Cuddle With A Orangutans</h3>
+          <p>Chandler Green</p>
+          <p class="summary">Though their soft exterior may look inticing, I
+            made the almost fatal mistake of cuddling with Lesley. I thought
+            that because I feed her everyday, it would be cool...I was gravely
+            mistaken...</p>
+        </div>
+      </section>
+
+    </div>
+  </body>
 
 </html>
