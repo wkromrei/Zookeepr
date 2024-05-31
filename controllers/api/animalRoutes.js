@@ -1,9 +1,8 @@
 const router = require("express").Router();
 const { Animal } = require("../../models");
-const withAuth = require("../../utils/auth");
 
 // CREATES an animal
-router.post("/", withAuth, async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const newAnimal = await Animal.create({
       ...req.body,
@@ -17,12 +16,11 @@ router.post("/", withAuth, async (req, res) => {
 });
 
 //DELETE an animal
-router.delete("/:id", withAuth, async (req, res) => {
+router.delete("/:id", async (req, res) => {
   try {
     const animalData = await Animal.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
       },
     });
 
@@ -33,6 +31,7 @@ router.delete("/:id", withAuth, async (req, res) => {
 
     res.status(200).json(animalData);
   } catch (err) {
+    console.error("Error deleting animal:", err);
     res.status(500).json(err);
   }
 });
