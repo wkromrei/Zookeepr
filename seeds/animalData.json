@@ -1,6 +1,12 @@
 [
   {
     "name": "Gorilla",
-    "amount-added": "5"
+    "description": "Black, female",
+    "amount": 3
+  },
+  {
+    "name": "Lion",
+    "description": "Orange, male",
+    "amount": 2
   }
 ]

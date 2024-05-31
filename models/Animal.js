@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Animal extends Model {}
+class Animal extends Model { }
 
 Animal.init(
   {
@@ -17,6 +17,10 @@ Animal.init(
     },
     description: {
       type: DataTypes.STRING,
+    },
+    amount: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
     date_created: {
       type: DataTypes.DATE,
