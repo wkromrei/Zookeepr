@@ -1,19 +1,17 @@
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zookeepr</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zookeepr</title>
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"
-    ></script>
-    <link rel="stylesheet" href="/css/jass.css" />
-    <link rel="stylesheet" href="/css/style.css" />
-  </head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
+  <link rel="stylesheet" href="/css/jass.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
 
-  <body>
-    {{! <div class="flex-column justify-space-around"> }}
+<body>
+  {{! <div class="flex-column justify-space-around"> }}
     <header id="header" class="header-container">
 
       <h1>
@@ -25,40 +23,39 @@
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-          <a href="/profile">profile</a>
-          |
-          <button class="no-button" id="logout">logout</button>
-        {{else}}
-          <a href="/login">Login</a>
+        <a href="/profile">profile</a>
+        |
+        <button class="no-button" id="logout">logout</button>
         {{/if}}
       </nav>
     </header>
     <div class="background" id="lottie-background"></div>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-      lottie.loadAnimation({ container:
-      document.getElementById('lottie-background'), renderer: 'svg', loop: true,
-      autoplay: true, path: '/images/Animation - 1716416642848.json' }); });
+        lottie.loadAnimation({
+          container:
+            document.getElementById('lottie-background'), renderer: 'svg', loop: true,
+          autoplay: true, path: '/images/Animation - 1716416642848.json'
+        });
+      });
     </script>
 
     <main class="container-news">
       <!-- Render the sub layout -->
       {{{body}}}
-      {{!
-        </main> }}
     </main>
     <footer>
       <p>Aksana Hlebik, Reid Herrera, Adriana Nino, William Kromrei, Daniel
         Torres</p>
     </footer>
     {{!
-    </div> }}
+  </div> }}
 
-    <!-- Render script for logged in users only -->
-    {{#if logged_in}}
-      <script src="/js/logout.js"></script>
-    {{/if}}
+  <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 
-  </body>
+</body>
 
 </html>
