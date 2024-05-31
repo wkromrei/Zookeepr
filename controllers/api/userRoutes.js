@@ -2,6 +2,7 @@ const router = require("express").Router();
 const { User } = require("../../models");
 const passport = require("passport");
 
+// CREATES user
 router.post("/", async (req, res) => {
   try {
     console.log("<<<<<<<loading route>>>>>>>>>");
@@ -17,6 +18,7 @@ router.post("/", async (req, res) => {
   }
 });
 
+// this route defines a route to handle POST requests for login
 router.post(
   "/login",
   passport.authenticate("local", {
@@ -25,6 +27,7 @@ router.post(
   })
 );
 
+// this route defines a route to handle POST requests for logout
 router.post("/logout", (req, res) => {
   req.logout((err) => {
     if (err) {

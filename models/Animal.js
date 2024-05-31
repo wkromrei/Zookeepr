@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Animal extends Model { }
+class Animal extends Model {}
 
 Animal.init(
   {
@@ -27,16 +27,11 @@ Animal.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    inventory: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      defaultValue: 0,
-    },
   },
   {
     sequelize,
     timestamps: false,
-    freezeTableName: true,
+    freezeTableName: false,
     underscored: true,
     modelName: "animal",
   }
