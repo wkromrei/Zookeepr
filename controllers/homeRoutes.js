@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
     const animals = animalData.map((animal) => animal.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render("homepage", {
+    res.render("login", {
       animals,
       logged_in: req.isAuthenticated(),
     });
