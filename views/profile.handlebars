@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Profile</title>
+    <script src="../js/update.js"></script>
   </head>
 
   <body>
@@ -13,14 +14,10 @@
       <div class="buttons-section">
         <div class="add-container">
           <!-- Button to Add an Animal -->
-          <form action="/animals/add" method="GET">
-            <button class="edit-buttons" type="submit">Add Animal</button>
-          </form>
+            <button class="edit-buttons" type="submit" id="add">Add Animal</button>
 
           <!-- Button to Delete an Animal -->
-          <form action="/animals/delete" method="GET">
-            <button class="edit-buttons" type="submit">Delete Animal</button>
-          </form>
+            <button class="edit-buttons" type="submit" id="delete">Delete Animal</button>
         </div>
 
         <!-- Logout Button -->
