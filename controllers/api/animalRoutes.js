@@ -1,6 +1,15 @@
 const router = require("express").Router();
 const { Animal } = require("../../models");
 
+// gets all animals
+router.get("/", async (req, res) => {
+  const animalData = await Animal.findAll().catch((err) => {
+    res.json(err);
+  });
+  const animals = animalData.map((animal) => animal.get({ plain: true }));
+  res.render("all", { animals });
+});
+
 // CREATES an animal
 router.post("/", async (req, res) => {
   try {
