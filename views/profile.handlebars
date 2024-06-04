@@ -4,26 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>User Profile</title>
-    <script src="../js/update.js"></script>
   </head>
 
   <body>
     <div class="main-container">
-      <h1>Welcome, {{name}}!</h1>
 
       <div class="buttons-section">
         <div class="add-container">
           <!-- Button to Add an Animal -->
-          <button class="edit-buttons" type="submit" id="add">Add Animal</button>
+          <div>
+            <button class="edit-buttons" type="submit" id="add">Add Animal</button>
+          </div>
 
           <!-- Button to Delete an Animal -->
           <button class="edit-buttons" type="submit" id="delete">Delete Animal</button>
         </div>
-
-        <!-- View All Animals Button -->
-        <form action="/users/logout" method="POST">
-          <button class="show-all-button" type="submit">Show All Animals</button>
-        </form>
+           <!-- View All Animals Button -->
+           <button class="show-all-button" type="submit">Show All Animals</button>
       </div>
 
       <h2 style="margin-bottom: 40px;">Staff Bulletin Board</h2>
@@ -38,7 +35,7 @@
         </div>
 
         <div class="blog-post">
-          <h3>How To Sell Overpriced Water To Tourist</h3>
+          <h3>How To Sell Overpriced Water</h3>
           <p>Matteo Ramazzini</p>
           <p class="summary">At first, I felt guilty, but then I realized that
             employees get 10% commission on all waterbottles sold. Naturally, I
@@ -64,6 +61,10 @@
       </section>
 
     </div>
+
   </body>
 
 </html>
+
+<script src="/js/update.js"></script>
+<script src="/js/viewAll.js"></script>
