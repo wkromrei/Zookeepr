@@ -7,9 +7,7 @@ router.get("/", async (req, res) => {
     res.json(err);
   });
   const animals = animalData.map((animal) => animal.get({ plain: true }));
-  res.render('all', {
-    animals
-  });
+  res.render("all", { animals });
 });
 
 // CREATES an animal
@@ -32,6 +30,7 @@ router.delete("/:id", async (req, res) => {
     const animalData = await Animal.destroy({
       where: {
         id: req.params.id,
+        amount: req.params.amount,
       },
     });
 
