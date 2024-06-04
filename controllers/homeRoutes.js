@@ -28,7 +28,7 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/animal/:id", async (req, res) => {
-    try {
+  try {
     const animalData = await Animal.findByPk(req.params.id, {
       include: [
         {
@@ -52,13 +52,7 @@ router.get("/animal/:id", async (req, res) => {
 // Use withAuth middleware to prevent access to route
 router.get("/profile", withAuth, async (req, res) => {
   try {
-    // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.user.id, {
-      attributes: { exclude: ["password"] },
-    });
-
-    const user = userData.get({ plain: true });
-
+    const user = await getUser(req);
     res.render("profile", {
       ...user,
       logged_in: true,
@@ -78,14 +72,27 @@ router.get("/login", (req, res) => {
   res.render("all");
 });
 
-router.get("/all", async(req, res) => {
+router.get("/all", async (req, res) => {
+
   const animalData = await Animal.findAll().catch((err) => {
     res.json(err);
   });
   const animals = animalData.map((animal) => animal.get({ plain: true }));
-  res.render("all", {animals});
-  
+  const user = await getUser(req);
+  res.render("all", {
+    animals,
+    ...user,
+    logged_in: true,
+
+  });
+
 });
 
+async function getUser(req) {
+  const userData = await User.findByPk(req.user.id, {
+    attributes: { exclude: ["password"] },
+  });
 
+  return userData.get({ plain: true });
+}
 module.exports = router;
