@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
         
         try {
-            const response = await fetch('/animals', {
+            const response = await fetch('/api/animals', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'

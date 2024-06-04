@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Adding an animal
     try {
-      const response = await fetch("/animal", {
+      const response = await fetch("/api/animals", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log(animalId, amountToDelete);
     // deleting an animal
     try {
-      const response = await fetch(`/animal/${animalId}`, {
+      const response = await fetch(`/api/animals/id`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
