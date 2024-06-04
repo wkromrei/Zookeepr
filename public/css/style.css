@@ -9,6 +9,32 @@
 header,
 .project:not(:last-child) {
   border-bottom: 1px solid #343333;
+  background-color: white;
+}
+
+.header-graphic {
+  width: auto;
+}
+
+body {
+  background-color: rgb(226, 255, 226);
+}
+
+h3 {
+  background-color: rgb(132, 139, 199);
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 300px;
+}
+
+nav p {
+  margin-right: 10px;
+  margin-bottom: 0px;
 }
 
 .no-button {
@@ -28,22 +54,20 @@ header,
 
 .header-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 0 30px;
-  height: 100px;
+  height: 200px;
+  justify-content: space-between;
 }
 
 header img {
-  height: 60px;
-  width: 70px;
+  height: 90px;
+  width: 100px;
 }
 
 h1 {
   display: flex;
   align-items: center;
-  margin-bottom: 60px;
-  margin-left: 50px;
 }
 
 h2 {
@@ -137,6 +161,7 @@ form .form-group {
 .main-container {
   display: block;
   width: 100%;
+  background-color: rgb(226, 255, 226);
 }
 
 .add-container {
@@ -159,7 +184,7 @@ form .form-group {
 }
 
 .summary {
-  background-color: rgb(238, 238, 238);
+  /* background-color: rgb(238, 238, 238); */
 }
 
 .blog-post {
@@ -170,6 +195,8 @@ form .form-group {
   border-width: 2px;
   border-style: solid;
   cursor: pointer;
+  transition: transform 0.3s ease;
+  background-color: white;
 }
 
 .blog-post:hover {
@@ -201,6 +228,11 @@ footer {
   justify-content: center;
   align-items: center;
 }
-/* video {
-  width: 100%;
-} */
+
+button {
+  cursor: pointer;
+}
+
+video {
+  width: 30%;
+}
