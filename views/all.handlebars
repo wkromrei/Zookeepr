@@ -1,0 +1,14 @@
+{{#each animals as |animal| }}
+<div class="row mb-4 project">
+    <div class="col-md-5">
+        <h2>
+            <a href="/api/animals/{{animal.id}}">{{animal.name}}</a>
+        </h2>
+    </div>
+    <div class="col-md-7">
+        <p>
+            {{animal.description}}{{animal.amount}}
+        </p>
+    </div>
+</div>
+{{/each}}
