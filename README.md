@@ -5,7 +5,7 @@ This web-site is a Zookeepr administrators.
 This web-site was created for people who's  working with animals.
 
 ## Usage
-1. Open:  "link from render"
+1. Open:  https://zookeepr-mxgb.onrender.com
 2. Fill out the fields email and password and press 'login' button.
 3. After loginning,you will redirected to the profile page.
 4. Profile page contains information about animals and "Add" and "Delete" buttons.
@@ -30,6 +30,8 @@ Wait untill pull request is approved.
 ## Test instructions
 N/A
 The following images show the wed-site appearance and functionality:
-![Getting Started](./)
+![Getting Started](./public/images/mock_up_1.png)
 
-![Getting Started](./)
+![Getting Started](./public/images/mock_up_2.png)
+
+![Getting Started](./public/images/mock_up_3.png)
