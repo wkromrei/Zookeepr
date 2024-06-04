@@ -10,12 +10,16 @@ passport.use(
     },
     async (email, password, done) => {
       try {
+        console.log('line13')
         const user = await User.findOne({ where: { email } });
         if (!user || !user.checkPassword(password)) {
+          console.log('line16')
           return done(null, false, { message: "Incorrect email or password." });
         }
+        console.log('line18')
         return done(null, user);
       } catch (err) {
+        console.log('line21')
         return done(err);
       }
     }
