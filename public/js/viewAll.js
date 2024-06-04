@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     showAllButton.addEventListener('click', async function (event) {
         event.preventDefault();
-        
+
         try {
-            const response = await fetch('/animals', {
+            const response = await fetch('/api/animals', {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
@@ -38,14 +38,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    function renderAnimalList(animals) {
-        modalContent.innerHTML = '<span class="close">&times;</span><h2>Animal List</h2>';
-        const ul = document.createElement('ul');
-        animals.forEach(animal => {
-            const li = document.createElement('li');
-            li.textContent = `${animal.name} - ${animal.description} (Amount: ${animal.amount})`;
-            ul.appendChild(li);
-        });
-        modalContent.appendChild(ul);
-    }
+    // function renderAnimalList(animals) {
+    //     modalContent.innerHTML = '<span class="close">&times;</span><h2>Animal List</h2>';
+    //     const ul = document.createElement('ul');
+    //     animals.forEach(animal => {
+    //         const li = document.createElement('li');
+    //         li.textContent = `${animal.name} - ${animal.description} (Amount: ${animal.amount})`;
+    //         ul.appendChild(li);
+    //     });
+    //     modalContent.appendChild(ul);
+    // }
 });

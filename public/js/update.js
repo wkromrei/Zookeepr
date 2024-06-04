@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log(animalId, amountToDelete);
     // deleting an animal
     try {
-      const response = await fetch(`/api/animals/${animalId}`, {
+      const response = await fetch(`/api/animals/id`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

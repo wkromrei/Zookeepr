@@ -30,6 +30,7 @@ router.delete("/:id", async (req, res) => {
     const animalData = await Animal.destroy({
       where: {
         id: req.params.id,
+        amount: req.params.amount,
       },
     });
 
