@@ -28,7 +28,7 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/animal/:id", async (req, res) => {
-  try {
+    try {
     const animalData = await Animal.findByPk(req.params.id, {
       include: [
         {
@@ -75,7 +75,17 @@ router.get("/login", (req, res) => {
     return;
   }
 
-  res.render("login");
+  res.render("all");
 });
+
+router.get("/all", async(req, res) => {
+  const animalData = await Animal.findAll().catch((err) => {
+    res.json(err);
+  });
+  const animals = animalData.map((animal) => animal.get({ plain: true }));
+  res.render("all", {animals});
+  
+});
+
 
 module.exports = router;
