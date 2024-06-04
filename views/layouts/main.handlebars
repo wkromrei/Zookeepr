@@ -1,43 +1,49 @@
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zookeepr</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zookeepr</title>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
-  <link rel="stylesheet" href="/css/jass.css" />
-  <link rel="stylesheet" href="/css/style.css" />
-</head>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"
+    ></script>
+    <link rel="stylesheet" href="/css/jass.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
 
-<body>
-  {{! <div class="flex-column justify-space-around"> }}
-    <header id="header" class="header-container">
+  <header id="header" class="header-container">
 
-      <h1>
+    {{!-- <h1>
         {{! <span role="img" aria-label="money"></span> }}
         <a href="/">Zookeepr</a>
         <img src="/images/logo.png" alt="logo" />
-      </h1>
+      </h1> --}}
+    <div class="header-graphic">
+      <video autoplay loop muted>
+        <source src="/videos/Zookeepr-Header.mp4" type="video/mp4" />
+      </video>
+      <img src="/images/logo.png" alt="logo" />
+    </div>
+    {{! <div class="flex-column justify-space-around"> }}
 
+    {{#if logged_in}}
       <nav>
         <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
+        <p>Welcome, {{name}}!</p>
         <a href="/profile">profile</a>
         |
         <button class="no-button" id="logout">logout</button>
-        {{/if}}
       </nav>
-    </header>
+    {{/if}}
+  </header>
+  <body>
     <div class="background" id="lottie-background"></div>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        lottie.loadAnimation({
-          container:
-            document.getElementById('lottie-background'), renderer: 'svg', loop: true,
-          autoplay: true, path: '/images/Animation - 1716416642848.json'
-        });
-      });
+      lottie.loadAnimation({ container:
+      document.getElementById('lottie-background'), renderer: 'svg', loop: true,
+      autoplay: true, path: '/images/Animation - 1716416642848.json' }); });
     </script>
 
     <main class="container-news">
@@ -51,11 +57,11 @@
     {{!
   </div> }}
 
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
+    <!-- Render script for logged in users only -->
+    {{#if logged_in}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
 
-</body>
+  </body>
 
 </html>
